@@ -23,6 +23,7 @@ body {
 .container > div {
     margin: 0;
     padding: 0;
+    transition: background-color .7s;
 }
 
 button {
