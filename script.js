@@ -5,11 +5,11 @@ function clearContainer() {
     while(container.firstElementChild) container.removeChild(container.lastElementChild);
 };
 
-function changeColor(node) {
+function changeColor() {
     const hue = Math.floor(Math.random()*361);
     lightness -= 10;
     if(lightness < 0) lightness = 90; // Reset lightness every 10 times
-    node.style['background-color'] = 'hsl(' + hue + ',' + '100%,' + lightness + '%)'; 
+    this.style['background-color'] = 'hsl(' + hue + ',' + '100%,' + lightness + '%)'; 
 };
 
 function createGrid(length) {
@@ -20,7 +20,7 @@ function createGrid(length) {
         const div = document.createElement('div');
         div.setAttribute('class', 'grid-item');
         container.appendChild(div);
-        div.addEventListener('mouseenter', function() {changeColor(this)});
+        div.addEventListener('mouseenter', changeColor);
     };
 
     // Grid layout
