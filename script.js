@@ -1,7 +1,3 @@
-// TODO:
-// - Add a button and function for clearing the screen
-// - Handle the situation where use quit directly after pressing reset
-
 function clearContainer() {
   // Clear the colors inside the sketch container 
   const elements = sketchContainer.querySelectorAll('.grid-item');
@@ -32,9 +28,11 @@ function createGrid(length) {
 };
 
 function reset() {
-  sideLength = prompt('Enter the numbers of squares per side: (max: 64):');
-  while(sideLength > 64) sideLength = prompt('Too large! Please enter a number no larger than 64:');
+  newLength = prompt('Enter the numbers of squares per side: (max: 64):');
+  while(newLength > 64) newLength = prompt('Too large! Please enter a number no larger than 64:');
   lightness = 100;
+  if(!newLength) return;
+  sideLength = newLength;
   createGrid(sideLength);
 };
 
