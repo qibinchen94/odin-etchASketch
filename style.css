@@ -10,17 +10,18 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.container {
+#sketch-container {
     display: grid;
     width: 50vh;
     height: 50vh;
     border: 1px solid #000;
 }
 
-.container > div {
+#sketch-container > div {
     margin: 0;
     padding: 0;
     transition: background-color .7s;
